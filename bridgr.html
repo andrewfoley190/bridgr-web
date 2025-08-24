@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bridgr — Bridge the gap from to‑do to done.</title>
+  <!-- Tailwind via CDN (no build step) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="description" content="Local, reliable, veteran-owned help: window washing, power washing, gutter cleaning, light yard care, tech support, and handy help." />
+  <style>
+    /* small polish */
+    html { scroll-behavior: smooth; }
+    .card { background: linear-gradient(135deg, rgba(39,39,42,.9), rgba(63,63,70,.9)); }
+    .glass { background: rgba(0,0,0,.2); backdrop-filter: blur(8px); }
+    .fade-up { opacity: 0; transform: translateY(12px); transition: .5s ease; }
+    .fade-up.in { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body class="min-h-screen bg-zinc-950 text-white font-[system-ui,Segoe UI,Inter,Arial]">
+
+  <!-- Header -->
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-zinc-800/50 bg-zinc-950/70 backdrop-blur-xl">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+      <a href="#home" class="flex items-center gap-3">
+        <!-- Zakim / B logo -->
+        <svg class="h-8 w-8" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="g" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#c7d2fe" /><stop offset="1" stop-color="#a78bfa" />
+            </linearGradient>
+          </defs>
+          <rect x="6" y="6" width="52" height="52" rx="14" fill="url(#g)" opacity=".12"/>
+          <path d="M12 48h40" stroke="url(#g)" stroke-width="2"/>
+          <path d="M32 14 L22 48 M32 14 L42 48" stroke="url(#g)" stroke-width="2"/>
+          <path d="M18 48 L28 38 L36 38 L46 48" stroke="url(#g)" stroke-width="2" fill="none"/>
+        </svg>
+        <span class="font-semibold tracking-wide">Bridgr</span>
+      </a>
+      <nav class="hidden items-center gap-6 text-sm text-zinc-300 sm:flex">
+        <a href="#services" class="hover:text-white">Services</a>
+        <a href="#why" class="hover:text-white">Why Bridgr</a>
+        <a href="#contact" class="hover:text-white">Contact</a>
+        <a href="#contact" class="rounded-xl bg-white px-4 py-2 font-medium text-zinc-900 hover:bg-zinc-200">Get a Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="relative isolate pt-28 bg-gradient-to-b from-zinc-950 via-zinc-950 to-zinc-900">
+    <div class="pointer-events-none absolute inset-0 -z-10">
+      <div class="absolute left-1/2 -top-20 h-[40rem] w-[40rem] -translate-x-1/2 rounded-full bg-indigo-500/10 blur-3xl"></div>
+    </div>
+
+    <div class="mx-auto max-w-6xl px-4 py-16 grid items-center gap-10 md:grid-cols-2">
+      <div class="fade-up">
+        <div class="mb-4 flex flex-wrap gap-2">
+          <span class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-3 py-1 text-sm text-white/90">
+            <!-- sparkle -->
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none"><path d="M12 3l2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5z" stroke="currentColor"/></svg>
+            Local • Reliable • Veteran‑Owned
+          </span>
+          <span class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-3 py-1 text-sm text-white/90">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none"><path d="M12 3l2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5z" stroke="currentColor"/></svg>
+            Serving Greater Boston Area
+          </span>
+        </div>
+        <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">
+          Bridge the gap from <span class="text-indigo-400">to‑do</span> to <span class="text-indigo-400">done</span>.
+        </h1>
+        <p class="mt-4 max-w-xl text-zinc-300">
+          I’m Andrew—your single, friendly point of contact for window washing, power washing, gutter cleaning,
+          light yard care, tech support, and handy help. One owner, one standard: quality with a welcoming touch.
+        </p>
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+          <a href="#contact" class="rounded-xl bg-white px-5 py-3 font-semibold text-zinc-900 hover:bg-zinc-200">Get a quote</a>
+          <a href="#services" class="rounded-xl border border-white/20 px-5 py-3 font-semibold text-white hover:bg-white/10">See services</a>
+        </div>
+      </div>
+
+      <div class="card rounded-2xl border border-white/10 p-6 shadow-2xl fade-up delay-100">
+        <div class="mb-4 flex items-center gap-3 text-zinc-200">
+          <!-- shield -->
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 4v5c0 5-3.5 8.5-7 9-3.5-.5-7-4-7-9V7l7-4z" stroke="currentColor"/></svg>
+          <span class="text-sm">Safety‑first • 32′ ladder reach</span>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-zinc-100">
+          <div class="text-center rounded-xl border border-white/10 bg-white/5 px-3 py-2">
+            <div class="text-[11px] uppercase tracking-wide text-zinc-400">Windows</div>
+            <div class="text-sm font-semibold">Streak‑free</div>
+          </div>
+          <div class="text-center rounded-xl border border-white/10 bg-white/5 px-3 py-2">
+            <div class="text-[11px] uppercase tracking-wide text-zinc-400">Power Wash</div>
+            <div class="text-sm font-semibold">Siding/Decks</div>
+          </div>
+          <div class="text-center rounded-xl border border-white/10 bg-white/5 px-3 py-2">
+            <div class="text-[11px] uppercase tracking-wide text-zinc-400">Gutters</div>
+            <div class="text-sm font-semibold">Clean & Flush</div>
+          </div>
+          <div class="text-center rounded-xl border border-white/10 bg-white/5 px-3 py-2">
+            <div class="text-[11px] uppercase tracking-wide text-zinc-400">Yard</div>
+            <div class="text-sm font-semibold">Light Care</div>
+          </div>
+          <div class="text-center rounded-xl border border-white/10 bg-white/5 px-3 py-2">
+            <div class="text-[11px] uppercase tracking-wide text-zinc-400">Haul</div>
+            <div class="text-sm font-semibold">Limited</div>
+          </div>
+          <div class="text-center rounded-xl border border-white/10 bg-white/5 px-3 py-2">
+            <div class="text-[11px] uppercase tracking-wide text-zinc-400">Tech</div>
+            <div class="text-sm font-semibold">Support</div>
+          </div>
+        </div>
+        <div class="mt-6 rounded-xl border border-white/10 glass p-4 text-sm text-zinc-300">
+          Every job is unique. <strong>No request is too outrageous</strong>—share your idea and we’ll see how to make it happen.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="bg-zinc-950 py-16">
+    <div class="mx-auto max-w-6xl px-4">
+      <h2 class="mb-2 text-center text-3xl font-bold">Services</h2>
+      <p class="mx-auto mb-10 max-w-2xl text-center text-zinc-400">
+        Honest work with the gear on hand—always done with care and a welcoming approach.
+      </p>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- Window Washing -->
+        <div class="card rounded-2xl border border-white/10 p-6 fade-up">
+          <div class="mb-4 flex items-center gap-3">
+            <div class="h-5 w-5 rounded bg-indigo-300/30"></div>
+            <h3 class="text-lg font-semibold">Window Washing</h3>
+          </div>
+          <p class="mb-4 text-sm text-zinc-300">
+            Crystal‑clear residential & small commercial windows. Exterior + screens. 32′ ladder access for multi‑story homes.
+          </p>
+          <ul class="list-disc space-y-1 pl-5 text-sm text-zinc-400">
+            <li>Interior/Exterior</li><li>Screens & tracks</li><li>Hard‑water spot care</li>
+          </ul>
+        </div>
+
+        <!-- Power Washing -->
+        <div class="card rounded-2xl border border-white/10 p-6 fade-up">
+          <div class="mb-4 flex items-center gap-3">
+            <div class="h-5 w-5 rounded bg-indigo-300/30"></div>
+            <h3 class="text-lg font-semibold">Power Washing</h3>
+          </div>
+          <p class="mb-4 text-sm text-zinc-300">Refresh siding, decks, fences, patios, walkways, and driveways with safe, effective pressure cleaning.</p>
+          <ul class="list-disc space-y-1 pl-5 text-sm text-zinc-400">
+            <li>Vinyl & wood siding</li><li>Decks & patios</li><li>Driveways & walkways</li>
+          </ul>
+        </div>
+
+        <!-- Gutter Cleaning -->
+        <div class="card rounded-2xl border border-white/10 p-6 fade-up">
+          <div class="mb-4 flex items-center gap-3">
+            <div class="h-5 w-5 rounded bg-indigo-300/30"></div>
+            <h3 class="text-lg font-semibold">Gutter Cleaning</h3>
+          </div>
+          <p class="mb-4 text-sm text-zinc-300">Clear clogs, flush downspouts, and protect your home from overflow and ice dams.</p>
+          <ul class="list-disc space-y-1 pl-5 text-sm text-zinc-400">
+            <li>Hand clean & bag</li><li>Downspout flush</li><li>Before/after photos</li>
+          </ul>
+        </div>
+
+        <!-- Yard Care (Light) -->
+        <div class="card rounded-2xl border border-white/10 p-6 fade-up">
+          <div class="mb-4 flex items-center gap-3">
+            <div class="h-5 w-5 rounded bg-indigo-300/30"></div>
+            <h3 class="text-lg font-semibold">Yard Care (Light)</h3>
+          </div>
+          <p class="mb-4 text-sm text-zinc-300">Small lawn touch‑ups, leaf cleanup, debris bagging, and quick spruce‑ups before guests or showings.</p>
+          <ul class="list-disc space-y-1 pl-5 text-sm text-zinc-400">
+            <li>Mow/trim (small)</li><li>Leaf/brush bagging</li><li>Storm clean‑up</li>
+          </ul>
+        </div>
+
+        <!-- Haul-Assist (Limited) -->
+        <div class="card rounded-2xl border border-white/10 p-6 fade-up">
+          <div class="mb-4 flex items-center gap-3">
+            <div class="h-5 w-5 rounded bg-indigo-300/30"></div>
+            <h3 class="text-lg font-semibold">Haul‑Assist (Limited)</h3>
+          </div>
+          <p class="mb-4 text-sm text-zinc-300">Occasional access to a pickup/van for small item moves or dump runs. Availability varies—ask when booking.</p>
+          <ul class="list-disc space-y-1 pl-5 text-sm text-zinc-400">
+            <li>Small moves</li><li>Dump runs (bagged)</li><li>Curb‑to‑curb assist</li>
+          </ul>
+        </div>
+
+        <!-- Handy Help + Tech Support -->
+        <div class="card rounded-2xl border border-white/10 p-6 fade-up">
+          <div class="mb-4 flex items-center gap-3">
+            <div class="h-5 w-5 rounded bg-indigo-300/30"></div>
+            <h3 class="text-lg font-semibold">Handy Help & Tech Support</h3>
+          </div>
+          <p class="mb-4 text-sm text-zinc-300">Quick fixes around the house, plus help with computers, devices, and Wi‑Fi so your tech runs smoothly.</p>
+          <ul class="list-disc space-y-1 pl-5 text-sm text-zinc-400">
+            <li>Install/replace basics</li><li>Assemble & mount</li><li>PC/Wi‑Fi/software help</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why -->
+  <section id="why" class="bg-zinc-900 py-16">
+    <div class="mx-auto max-w-6xl px-4 grid items-center gap-10 md:grid-cols-2">
+      <div class="fade-up">
+        <h2 class="mb-3 text-3xl font-bold">Why Bridgr</h2>
+        <ul class="space-y-3 text-zinc-300">
+          <li>• Direct owner contact—easy and personal.</li>
+          <li>• Veteran‑owned mindset: discipline, punctuality, and clean execution.</li>
+          <li>• Safety‑first with proper ladders and technique on every job.</li>
+          <li>• Clear scope and photo updates so you know it’s done right.</li>
+        </ul>
+      </div>
+      <blockquote class="card rounded-2xl border border-white/10 p-6 fade-up">
+        <p class="text-lg leading-relaxed">
+          “I treat every job like it’s my own home. The goal is simple: leave it better than I found it and make scheduling effortless.”
+        </p>
+        <footer class="mt-4 text-sm text-zinc-400">— Andrew Foley, Owner</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="bg-zinc-950 py-16">
+    <div class="mx-auto max-w-6xl px-4 grid gap-10 md:grid-cols-2">
+      <div class="fade-up">
+        <h2 class="mb-2 text-3xl font-bold">Get a Quote</h2>
+        <p class="mb-6 max-w-md text-zinc-400">
+          Tell me what you need, where you are, and your ideal timing.
+          <strong> No request is too outrageous</strong>—share your idea and we’ll figure it out together.
+        </p>
+        <div class="mt-6 space-y-3 text-zinc-300">
+          <div class="flex items-center gap-3">
+            <!-- mail -->
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4z" stroke="currentColor"/><path d="M4 7l8 6 8-6" stroke="currentColor"/></svg>
+            <a class="hover:underline" href="mailto:andrewfoley@thebridgr.com">andrewfoley@thebridgr.com</a>
+          </div>
+        </div>
+      </div>
+
+      <form id="quoteForm" class="card rounded-2xl border border-white/10 p-6 fade-up">
+        <label class="mb-2 block text-sm text-zinc-300" for="name">Name</label>
+        <input id="name" class="mb-4 w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-white outline-none placeholder:text-zinc-500" placeholder="Your name" required />
+
+        <label class="mb-2 block text-sm text-zinc-300" for="email">Email</label>
+        <input id="email" type="email" class="mb-4 w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-white outline-none placeholder:text-zinc-500" placeholder="you@example.com" required />
+
+        <label class="mb-2 block text-sm text-zinc-300" for="msg">What do you need?</label>
+        <textarea id="msg" class="mb-6 h-32 w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-white outline-none placeholder:text-zinc-500"
+          placeholder="e.g., 20 windows exterior + screens; 2‑story; Milton, MA; aiming for next week. No request is too big or small!" required></textarea>
+
+        <button type="submit" class="w-full rounded-xl bg-white px-5 py-3 font-semibold text-zinc-900 hover:bg-zinc-200">Email my request</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 bg-zinc-950 py-10">
+    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 text-sm text-zinc-400 md:flex-row">
+      <div class="flex items-center gap-3 text-zinc-300">
+        <!-- small logo -->
+        <svg class="h-6 w-6" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs><linearGradient id="g2" x1="0" y1="0" x2="64" y2="64"><stop stop-color="#c7d2fe"/><stop offset="1" stop-color="#a78bfa"/></linearGradient></defs>
+          <rect x="6" y="6" width="52" height="52" rx="14" fill="url(#g2)" opacity=".12"/>
+          <path d="M12 48h40" stroke="url(#g2)" stroke-width="2"/>
+          <path d="M32 14 L22 48 M32 14 L42 48" stroke="url(#g2)" stroke-width="2"/>
+          <path d="M18 48 L28 38 L36 38 L46 48" stroke="url(#g2)" stroke-width="2" fill="none"/>
+        </svg>
+        <span>© <span id="yr"></span> Bridgr. All rights reserved.</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <a class="hover:text-white" href="#services">Services</a>
+        <a class="hover:text-white" href="#why">Why Bridgr</a>
+        <a class="hover:text-white" href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // year
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // simple fade-up on scroll
+    const io = new IntersectionObserver(entries=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }});
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.fade-up').forEach(el=>io.observe(el));
+
+    // mailto form
+    document.getElementById('quoteForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const msg = document.getElementById('msg').value.trim();
+      const to = 'andrewfoley@thebridgr.com';
+      const subject = encodeURIComponent('Bridgr — Quote Request');
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${msg}`);
+      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+    });
+  </script>
+</body>
+</html>
