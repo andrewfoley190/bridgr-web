@@ -18,6 +18,95 @@
 </head>
 <body class="min-h-screen bg-zinc-950 text-white font-[system-ui,Segoe UI,Inter,Arial]">
 
+  <!-- =========================
+     HERO: ABOUT + SERVICES SNAPSHOT
+========================= -->
+<section id="hero" style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:60px 20px;background:linear-gradient(180deg,#0c0f14,#0f1115);color:#e8ebf0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif">
+  <div style="max-width:1100px;margin:0 auto;width:100%;">
+
+    <!-- Header / Logo -->
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px;">
+      <span style="display:inline-grid;place-items:center;width:56px;height:56px;border-radius:14px;background:linear-gradient(145deg,#1c2232,#0e1220);border:1px solid #2b3244;">
+        <svg viewBox="0 0 64 64" width="32" height="32" aria-hidden="true">
+          <path d="M10 46h44a2 2 0 0 1 0 4H10a2 2 0 0 1 0-4Z" fill="#6aa1ff"/>
+          <path d="M32 14 14 46h4l14-24 14 24h4L32 14Z" fill="#6aa1ff"/>
+        </svg>
+      </span>
+      <div>
+        <h1 style="font-size:44px;line-height:1.1;margin:0;">Bridgr</h1>
+        <div style="color:#a7afbd;margin-top:4px;">“No request is too outrageous.”</div>
+      </div>
+    </div>
+
+    <!-- Cards: About Me + About Bridgr -->
+    <div style="display:grid;gap:18px;margin-top:22px;">
+      <div style="background:#151823;border:1px solid #23283a;border-radius:18px;padding:24px;box-shadow:0 10px 30px rgba(0,0,0,.25);">
+        <h2 style="font-size:28px;margin:0 0 10px;">About Me</h2>
+        <p style="font-size:18px;line-height:1.65;margin:0;">
+          Hey, I’m <strong>Andrew Foley</strong> — a Marine veteran who believes in showing up, working hard,
+          and leaving things better than I found them. I started <strong>Bridgr</strong> because I love solving problems for people.
+          Right now, that means I’m the one cleaning gutters, washing windows, power washing, or fixing your tech.
+          When you call, it’s me who shows up and gets it done right.
+        </p>
+      </div>
+
+      <div style="background:#151823;border:1px solid #23283a;border-radius:18px;padding:24px;box-shadow:0 10px 30px rgba(0,0,0,.25);">
+        <h2 style="font-size:28px;margin:0 0 10px;">About Bridgr</h2>
+        <p style="font-size:18px;line-height:1.65;margin:0 0 10px;">
+          Bridgr is more than a small service business — it’s the start of something bigger.
+          The vision is simple: <strong>Bridgr will be the universal middle-man</strong> — the place to turn when you
+          need <em>anything</em> done quickly and affordably.
+        </p>
+        <p style="font-size:18px;line-height:1.65;margin:0;">
+          Today, I’m putting in the grind myself. Tomorrow, you’ll tap a button and instantly get the right help at the right price —
+          for your home, yard, tech, errands, and beyond. When you hire me now, you’re helping build that future.
+        </p>
+      </div>
+    </div>
+
+    <!-- CTAs -->
+    <div style="margin-top:22px;display:flex;flex-wrap:wrap;gap:12px;">
+      <a href="mailto:andrewfoley@thebridgr.com" style="padding:14px 20px;border-radius:12px;background:linear-gradient(145deg,#417BFF,#6AA1FF);color:#0b1020;font-weight:600;text-decoration:none;box-shadow:0 10px 20px rgba(83,130,255,.25);">Contact Me</a>
+      <a href="#services" style="padding:14px 20px;border-radius:12px;border:1px solid #2b3248;background:#1a2030;color:#e8ebf0;font-weight:600;text-decoration:none;">Skip to Full Services</a>
+    </div>
+
+    <!-- Services Snapshot -->
+    <div style="margin-top:32px;">
+      <h3 style="font-size:22px;margin:0 0 12px;color:#cfd6e6;">What I’m doing today (the starting point):</h3>
+      <div style="display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));">
+        <div style="background:#151823;border:1px solid #23283a;border-radius:14px;padding:18px;">
+          <div style="font-size:20px;margin-bottom:6px;">🪟 Window Washing</div>
+          <div style="font-size:14px;color:#a7afbd;">Streak-free, careful, interior & exterior options.</div>
+        </div>
+        <div style="background:#151823;border:1px solid #23283a;border-radius:14px;padding:18px;">
+          <div style="font-size:20px;margin-bottom:6px;">🪜 Gutter Cleaning</div>
+          <div style="font-size:14px;color:#a7afbd;">Clog removal & flow check. Simple pricing (e.g., $1/ft available).</div>
+        </div>
+        <div style="background:#151823;border:1px solid #23283a;border-radius:14px;padding:18px;">
+          <div style="font-size:20px;margin-bottom:6px;">💦 Power Washing</div>
+          <div style="font-size:14px;color:#a7afbd;">Siding, decks, walkways — bring it back to life.</div>
+        </div>
+        <div style="background:#151823;border:1px solid #23283a;border-radius:14px;padding:18px;">
+          <div style="font-size:20px;margin-bottom:6px;">💻 Tech Support</div>
+          <div style="font-size:14px;color:#a7afbd;">Setup, cleanup, troubleshooting — no jargon.</div>
+        </div>
+      </div>
+
+      <!-- Vision reminder line -->
+      <p style="font-size:14px;color:#8e96a8;margin-top:10px;">
+        These are the services I’m starting with — the goal is a universal, on-demand middle-man for anything you need.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- Smooth scroll + header offset if you have a sticky header -->
+<style>
+  html { scroll-behavior: smooth; }
+  #services { scroll-margin-top: 76px; } /* adjust to your header height */
+</style>
+
   <!-- Header -->
   <header class="fixed inset-x-0 top-0 z-50 border-b border-zinc-800/50 bg-zinc-950/70 backdrop-blur-xl">
     <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
@@ -257,44 +346,6 @@
     </div>
   </section>
 
-  <!-- =========================
-     ABOUT ME / ABOUT BRIDGR
-========================= -->
-<section id="about" style="padding:60px 20px;background:#0f1115;color:#e8ebf0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif">
-  <div style="max-width:960px;margin:0 auto;">
-
-    <h2 style="font-size:36px;margin-bottom:12px">About Me</h2>
-    <p style="font-size:18px;line-height:1.6;opacity:.95;">
-      Hi, I’m <strong>Andrew Foley</strong> — a Marine veteran who believes in showing up, working hard, 
-      and leaving things better than I found them. I started <strong>Bridgr</strong> because I genuinely 
-      enjoy helping people solve problems — whether that’s cleaning gutters, washing windows, power washing, 
-      or getting your tech back on track. Right now, it’s just me grinding day in and day out, 
-      but when you call, you know exactly who’s showing up.
-    </p>
-
-    <h2 style="font-size:36px;margin:40px 0 12px">About Bridgr</h2>
-    <p style="font-size:18px;line-height:1.6;opacity:.95;">
-      Bridgr is more than a small service business — it’s the start of something bigger.  
-      The vision is simple: <strong>Bridgr will be the universal middle-man</strong> — the place you can turn 
-      when you need <em>anything</em> done quickly and affordably. Today, that means I’m rolling up my sleeves 
-      myself. Tomorrow, it means tapping a button and instantly getting the right help at the right price, 
-      for your home, yard, tech, errands, and more.
-    </p>
-    <p style="font-size:18px;line-height:1.6;opacity:.95;">
-      When you hire me now, you’re not just getting a job done — you’re helping build that bigger vision 
-      from the ground up. I appreciate every client who’s part of that story.
-    </p>
-
-    <ul style="margin:24px 0;padding:0;list-style:none;display:grid;gap:10px;font-size:16px;">
-      <li>✅ Personal service — you work directly with me</li>
-      <li>✅ Fair, straightforward pricing</li>
-      <li>✅ Marine Corps reliability and discipline</li>
-      <li>✅ Part of something bigger — building Bridgr into a universal problem-solver</li>
-    </ul>
-
-  </div>
-</section>
-
   <!-- Footer -->
   <footer class="border-t border-white/10 bg-zinc-950 py-10">
     <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 text-sm text-zinc-400 md:flex-row">
@@ -341,4 +392,5 @@
   </script>
 </body>
 </html>
+
 
