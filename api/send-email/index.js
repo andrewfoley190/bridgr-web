@@ -1,13 +1,15 @@
-// api/send-email/index.js
+// /api/send-email/index.js
+const nodemailer = require("nodemailer");
+
 module.exports = async function (context, req) {
   const headers = {
     "Content-Type": "application/json",
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Methods": "POST,OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type"
+    "Access-Control-Allow-Headers": "Content-Type",
   };
 
-  // Preflight (CORS)
+  // Preflight
   if (req.method === "OPTIONS") {
     context.res = { status: 204, headers };
     return;
@@ -15,20 +17,64 @@ module.exports = async function (context, req) {
 
   try {
     const body = req.body || {};
-    const { name, email, phone, msg, message } = body; // msg or message field
+    const { name, email, phone, msg, message } = body; // support msg or message
+    const text = msg || message;
 
-    if (!name || !email || !(msg || message)) {
-      context.res = { status: 400, headers, body: JSON.stringify({ error: "Missing fields" }) };
+    if (!name || !email || !text) {
+      context.res = {
+        status: 400,
+        headers,
+        body: JSON.stringify({ error: "Missing required fields (name, email, message)" }),
+      };
       return;
     }
 
-    // Log so you can confirm in Azure logs (SWA → Monitoring → Streaming logs)
-    context.log(`Form OK: ${name} | ${email} | ${phone || "n/a"} | ${(msg || message).slice(0,120)}`);
+    // SMTP transport using env vars you added in Azure
+    const transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST,
+      port: Number(process.env.SMTP_PORT || 587),
+      secure: false, // true if you use port 465
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+    });
 
-    // This returns success for now. (We’ll wire real email after you confirm this works.)
-    context.res = { status: 200, headers, body: JSON.stringify({ ok: true }) };
+    const mail = {
+      from: `"Bridgr Website" <${process.env.SMTP_USER}>`,
+      to: process.env.TO_EMAIL, // where YOU receive it
+      subject: "New Bridgr Quote Request",
+      text:
+`Name: ${name}
+Email: ${email}
+Phone: ${phone || "Not provided"}
+
+Message:
+${text}`,
+      // (optional) nice-looking HTML version
+      html: `
+        <h2>New Bridgr Quote Request</h2>
+        <p><b>Name:</b> ${name}</p>
+        <p><b>Email:</b> ${email}</p>
+        <p><b>Phone:</b> ${phone || "Not provided"}</p>
+        <p><b>Message:</b></p>
+        <pre>${text}</pre>
+      `,
+    };
+
+    await transporter.sendMail(mail);
+
+    context.res = {
+      status: 200,
+      headers,
+      body: JSON.stringify({ ok: true }),
+    };
   } catch (err) {
-    context.log("Send error:", err);
-    context.res = { status: 500, headers, body: JSON.stringify({ error: "Failed to process" }) };
+    context.log("send-email error:", err);
+    context.res = {
+      status: 500,
+      headers,
+      body: JSON.stringify({ error: "Failed to send email" }),
+    };
   }
 };
