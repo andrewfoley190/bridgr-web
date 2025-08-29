@@ -183,33 +183,23 @@
       </div>
 
       <!-- INSTANT SEND FORM (Formspree) -->
-      <form id="quoteForm" class="card rounded-2xl border border-white/10 p-6 fade-up"
-            action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID"
-            method="POST">
-        <label class="mb-2 block text-sm text-zinc-300" for="name">Name</label>
-        <input id="name" name="name" class="mb-4 w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-white placeholder:text-zinc-500" placeholder="Your name" required />
+<form id="quoteForm" class="card rounded-2xl border border-white/10 p-6 fade-up">
+  <label class="mb-2 block text-sm text-zinc-300" for="name">Name</label>
+  <input id="name" class="mb-4 w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-white outline-none placeholder:text-zinc-500" placeholder="Your name" required />
 
-        <label class="mb-2 block text-sm text-zinc-300" for="email">Email</label>
-        <input id="email" name="email" type="email" class="mb-4 w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-white placeholder:text-zinc-500" placeholder="you@example.com" required />
+  <label class="mb-2 block text-sm text-zinc-300" for="email">Email</label>
+  <input id="email" type="email" class="mb-4 w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-white outline-none placeholder:text-zinc-500" placeholder="you@example.com" required />
 
-<label class="mb-2 block text-sm text-zinc-300" for="phone">Phone (optional)</label>
-<input id="phone" type="tel"
-  class="mb-4 w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-white outline-none placeholder:text-zinc-500"
-  placeholder="(XXX) XXX-XXXX" />
+  <label class="mb-2 block text-sm text-zinc-300" for="phone">Phone (optional)</label>
+  <input id="phone" type="tel" class="mb-4 w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-white outline-none placeholder:text-zinc-500" placeholder="(123) 456-7890" />
 
-        <label class="mb-2 block text-sm text-zinc-300" for="msg">What do you need?</label>
-        <textarea id="msg" name="message" class="mb-4 h-32 w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-white placeholder:text-zinc-500"
-          placeholder="e.g., 20 windows exterior + screens; 2-story; Milton, MA; aiming for next week. No request is too big or small!" required></textarea>
+  <label class="mb-2 block text-sm text-zinc-300" for="msg">What do you need?</label>
+  <textarea id="msg" class="mb-6 h-32 w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-white outline-none placeholder:text-zinc-500"
+    placeholder="e.g., 20 windows exterior + screens; 2-story; Milton, MA; aiming for next week. No request is too outrageous!" required></textarea>
 
-        <!-- Extras -->
-        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
-        <input type="hidden" name="_subject" value="Bridgr — Quote Request" />
-        <input type="hidden" name="_redirect" value="https://www.thebridgr.com/#thanks" />
+  <button type="submit" class="w-full rounded-xl bg-white px-5 py-3 font-semibold text-zinc-900 hover:bg-zinc-200">Send</button>
+</form>
 
-        <button type="submit" class="btn w-full rounded-xl bg-white px-5 py-3 font-semibold text-zinc-900 hover:bg-zinc-200">Send</button>
-
-        <p id="formNote" class="sr-only" aria-live="polite">Form status</p>
-      </form>
     </div>
   </section>
 
