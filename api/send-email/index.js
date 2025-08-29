@@ -15,57 +15,39 @@ module.exports = async function (context, req) {
     return;
   }
 
-  try {
-    const { name, email, phone, msg } = req.body || {};
+  // ... existing code above
+try {
+  const body = req.body || {};
+  const { name, email, phone, msg, message } = body;
 
-    if (!name || !email || !msg) {
-      context.res = {
-        status: 400,
-        headers,
-        body: JSON.stringify({ error: "Missing fields" }),
-      };
-      return;
-    }
-
-    // SMTP transport from environment variables you added in Azure
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,                   // e.g. smtp.office365.com
-      port: Number(process.env.SMTP_PORT || 587),    // 587 for STARTTLS, 465 for SSL
-      secure: Number(process.env.SMTP_PORT) === 465, // true if port 465
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-    });
-
-    const to = process.env.TO_EMAIL;                 // where you want to receive requests
-    const subject = `Bridgr — Quote Request from ${name}`;
-    const text =
-      `Name: ${name}\n` +
-      `Email: ${email}\n` +
-      `Phone: ${phone || ""}\n\n` +
-      `${msg}`;
-    const html =
-      `<p><b>Name:</b> ${name}</p>` +
-      `<p><b>Email:</b> ${email}</p>` +
-      `<p><b>Phone:</b> ${phone || ""}</p>` +
-      `<p><b>Message:</b><br>${(msg || "").replace(/\n/g, "<br>")}</p>`;
-
-    await transporter.sendMail({
-      from: `"Bridgr" <${process.env.SMTP_USER}>`,
-      to,
-      subject,
-      text,
-      html,
-    });
-
-    context.res = { status: 200, headers, body: JSON.stringify({ ok: true }) };
-  } catch (err) {
-    context.log("Mail error:", err);
-    context.res = {
-      status: 500,
-      headers,
-      body: JSON.stringify({ error: "Failed to send" }),
-    };
+  if (!name || !email || !(msg || message)) {
+    context.res = { status: 400, headers, body: JSON.stringify({ error: "Missing fields" }) };
+    return;
   }
+
+  // 🔎 Add a quick connection check (will throw if host/port/auth are wrong)
+  await transporter.verify();
+
+  // Log what we got (safe)
+  context.log(`Form OK: ${name} | ${email} | ${phone || "n/a"} | ${(msg || message).slice(0,120)}`);
+
+  await transporter.sendMail({
+    from: process.env.SMTP_USER, // must match your mailbox
+    to: process.env.TO_EMAIL,
+    subject: `Bridgr Quote — ${name}`,
+    text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone || "n/a"}\n\n${msg || message}`,
+  });
+
+  context.res = { status: 200, headers, body: JSON.stringify({ ok: true }) };
+
+} catch (err) {
+  // ⬅️ expose the actual error to the browser while we debug
+  context.log("Mail error:", err && (err.stack || err.message || err));
+  context.res = {
+    status: 500,
+    headers,
+    body: JSON.stringify({ error: err && (err.message || String(err)) })
+  };
+}
+
 };
