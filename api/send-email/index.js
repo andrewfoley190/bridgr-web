@@ -1,30 +1,33 @@
-const { app } = require('@azure/functions');
+// api/send-email/index.js
+module.exports = async function (context, req) {
+  const headers = {
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "POST,OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type"
+  };
 
-app.http('send-email', {
-  methods: ['POST'],
-  authLevel: 'anonymous',
-  handler: async (request, context) => {
-    try {
-      const body = await request.json();
-      const { name, email, phone, message } = body;
-
-      // Log the values so you can confirm it's working in Azure logs
-      context.log(`Name: ${name}, Email: ${email}, Phone: ${phone}, Message: ${message}`);
-
-      // ---- PLACEHOLDER ----
-      // Right now this just returns success.
-      // Later, we’ll wire it to an email service (SMTP, SendGrid, etc.)
-      return {
-        status: 200,
-        jsonBody: { success: true, msg: "Form received successfully." }
-      };
-
-    } catch (err) {
-      context.log.error('Error processing request', err);
-      return {
-        status: 400,
-        jsonBody: { success: false, msg: "Invalid request." }
-      };
-    }
+  // Preflight (CORS)
+  if (req.method === "OPTIONS") {
+    context.res = { status: 204, headers };
+    return;
   }
-});
+
+  try {
+    const body = req.body || {};
+    const { name, email, phone, msg, message } = body; // allow either key
+
+    if (!name || !email || !(msg || message)) {
+      context.res = { status: 400, headers, body: JSON.stringify({ error: "Missing fields" }) };
+      return;
+    }
+
+    // For now, just confirm we received it. (We’ll wire email next.)
+    context.log(`Form OK: ${name} | ${email} | ${phone || "n/a"} | ${(msg || message).slice(0,120)}`);
+
+    context.res = { status: 200, headers, body: JSON.stringify({ ok: true }) };
+  } catch (err) {
+    context.log("Send error:", err);
+    context.res = { status: 500, headers, body: JSON.stringify({ error: "Failed to process" }) };
+  }
+};
