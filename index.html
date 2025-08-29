@@ -95,7 +95,7 @@
         Honest work with the gear on hand—always done with care and a welcoming approach.
       </p>
 
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         <!-- Window Washing -->
         <div class="card rounded-2xl border border-white/10 p-6 fade-up">
           <div class="mb-4 flex items-center gap-3">
@@ -134,6 +134,21 @@
           </ul>
         </div>
 
+<!-- Haul-Assist (Limited) -->
+<div class="card rounded-2xl border border-white/10 p-6 fade-up">
+  <div class="mb-4 flex items-center gap-3">
+    <div class="h-5 w-5 rounded bg-indigo-300/30"></div>
+    <h3 class="text-lg font-semibold">Haul-Assist (Limited)</h3>
+  </div>
+  <p class="mb-4 text-sm text-zinc-300">
+    Occasional access to a pickup/van for small item moves or dump runs. Availability varies—ask when booking.
+  </p>
+  <ul class="list-disc space-y-1 pl-5 text-sm text-zinc-400">
+    <li>Small moves</li>
+    <li>Dump runs (bagged)</li>
+    <li>Curb-to-curb assist</li>
+  </ul>
+</div>
 
         <!-- Handy Help + Tech Support -->
         <div class="card rounded-2xl border border-white/10 p-6 fade-up">
@@ -177,6 +192,11 @@
         <label class="mb-2 block text-sm text-zinc-300" for="email">Email</label>
         <input id="email" name="email" type="email" class="mb-4 w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-white placeholder:text-zinc-500" placeholder="you@example.com" required />
 
+<label class="mb-2 block text-sm text-zinc-300" for="phone">Phone (optional)</label>
+<input id="phone" type="tel"
+  class="mb-4 w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-white outline-none placeholder:text-zinc-500"
+  placeholder="(XXX) XXX-XXXX" />
+
         <label class="mb-2 block text-sm text-zinc-300" for="msg">What do you need?</label>
         <textarea id="msg" name="message" class="mb-4 h-32 w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-white placeholder:text-zinc-500"
           placeholder="e.g., 20 windows exterior + screens; 2-story; Milton, MA; aiming for next week. No request is too big or small!" required></textarea>
@@ -207,9 +227,7 @@
         <span>© <span id="yr"></span> Bridgr. All rights reserved.</span>
       </div>
       <div class="flex items-center gap-6">
-        <a class="hover:text-white tap" href="#services">Services</a>
-        <a class="hover:text-white tap" href="#why">Why Bridgr</a>
-        <a class="hover:text-white tap" href="#contact">Contact</a>
+       
       </div>
     </div>
   </footer>
@@ -226,4 +244,3 @@
   </script>
 </body>
 </html>
-
