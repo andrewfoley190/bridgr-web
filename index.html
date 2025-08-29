@@ -221,34 +221,63 @@
       </div>
     </div>
   </footer>
- <script>
-  document.getElementById('quoteForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
 
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const phone = document.getElementById('phone') ? document.getElementById('phone').value.trim() : "";
-    const msg = document.getElementById('msg').value.trim();
+  <script>
+  // --- Footer year ---
+  document.getElementById('yr').textContent = new Date().getFullYear();
 
-    try {
-      const res = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, phone, msg })
-      });
-
-      if (res.ok) {
-        alert('✅ Request sent! I’ll be in touch soon.');
-        document.getElementById('quoteForm').reset();
-      } else {
-        alert('❌ Something went wrong. Try again.');
+  // --- Simple fade-up on scroll ---
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
       }
-    } catch (err) {
-      console.error(err);
-      alert('⚠️ Error sending message.');
-    }
-  });
- <script>
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.fade-up').forEach((el) => io.observe(el));
+
+  // --- Quote form -> Azure Function (/api/send-email) ---
+  const form = document.getElementById('quoteForm');
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const name  = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = (document.getElementById('phone')?.value || '').trim();
+      const msg   = document.getElementById('msg').value.trim();
+
+      const btn = form.querySelector('button[type="submit"]');
+      const original = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+
+      try {
+        const res = await fetch('/api/send-email', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, phone, msg })
+        });
+
+        if (res.ok) {
+          alert('✅ Request sent! I’ll be in touch soon.');
+          form.reset();
+        } else {
+          const text = await res.text();
+          console.error('Send failed:', text);
+          alert('❌ Something went wrong sending your message. Please try again.');
+        }
+      } catch (err) {
+        console.error(err);
+        alert('⚠️ Network error. Please try again.');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = original;
+      }
+    });
+  }
+</script>
+
 </body>
 </html>
-
