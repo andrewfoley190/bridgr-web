@@ -41,12 +41,11 @@ try {
   context.res = { status: 200, headers, body: JSON.stringify({ ok: true }) };
 
 } catch (err) {
-  // ⬅️ expose the actual error to the browser while we debug
-  context.log("Mail error:", err && (err.stack || err.message || err));
+  console.error("Send error:", err);
   context.res = {
     status: 500,
     headers,
-    body: JSON.stringify({ error: err && (err.message || String(err)) })
+    body: JSON.stringify({ error: "Failed to send", details: err.message || err.toString() })
   };
 }
 
