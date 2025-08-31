@@ -237,47 +237,29 @@
   }, { threshold: 0.15 });
   document.querySelectorAll('.fade-up').forEach((el) => io.observe(el));
 
-  // --- Quote form -> Azure Function (/api/send-email) ---
-  const form = document.getElementById('quoteForm');
-  if (form) {
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
+// --- Quote form -> mailto (no backend) ---
+const form = document.getElementById('quoteForm');
+if (form) {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-      const name  = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const phone = (document.getElementById('phone')?.value || '').trim();
-      const msg   = document.getElementById('msg').value.trim();
+    const name  = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = (document.getElementById('phone')?.value || '').trim();
+    const msg   = document.getElementById('msg').value.trim();
 
-      const btn = form.querySelector('button[type="submit"]');
-      const original = btn.textContent;
-      btn.disabled = true;
-      btn.textContent = 'Sending…';
+    const to = 'andrewfoley@thebridgr.com';
+    const subject = encodeURIComponent('Bridgr — Quote Request');
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\nPhone: ${phone || '-'}\n\n${msg}`
+    );
 
-      try {
-        const res = await fetch('/api/send-email', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name, email, phone, msg })
-        });
+    window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+  });
+}
 
-        if (res.ok) {
-          alert('✅ Request sent! I’ll be in touch soon.');
-          form.reset();
-        } else {
-          const text = await res.text();
-          console.error('Send failed:', text);
-          alert('❌ Something went wrong sending your message. Please try again.');
-        }
-      } catch (err) {
-        console.error(err);
-        alert('⚠️ Network error. Please try again.');
-      } finally {
-        btn.disabled = false;
-        btn.textContent = original;
-      }
-    });
-  }
 </script>
 
 </body>
 </html>
+
