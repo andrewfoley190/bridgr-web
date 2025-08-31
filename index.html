@@ -28,72 +28,48 @@
 </head>
 <body class="min-h-screen bg-zinc-950 text-white font-[system-ui,Segoe UI,Inter,Arial] antialiased">
 
-  <!-- =========================
-       HERO WITH HEADSHOTS
-  ========================= -->
-  <section id="hero" class="bg-zinc-950 py-16 px-6">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 items-center gap-10 text-center md:text-left">
+<!-- =========================
+     ABOUT ME & BRIDGR
+========================= -->
+<section id="about" class="bg-zinc-950 py-16">
+  <div class="mx-auto max-w-6xl px-4">
+    <h2 class="text-center text-3xl sm:text-4xl font-bold mb-10">About Me & Bridgr</h2>
+
+    <div class="flex flex-col md:flex-row items-center justify-between gap-10">
       
       <!-- Left: Marine Headshot -->
-      <div class="flex justify-center md:justify-start">
-        <img src="images/marine.jpg" alt="Marine Corps Headshot" 
+      <div class="flex justify-center md:justify-start w-40 h-40">
+        <img src="images/marine.jpg" alt="Marine Headshot"
              class="rounded-full w-40 h-40 object-cover border-4 border-indigo-500 shadow-lg">
       </div>
 
-      <!-- Center: Intro Text -->
-      <div>
-        <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight text-white">
-          Bridge the gap from <span class="text-indigo-400">to-do</span> to <span class="text-indigo-400">done</span>.
-        </h1>
-        <p class="mt-4 text-zinc-300 text-lg">
-          From Marine Corps discipline to building Bridgr — I’ve proven I can be trusted to show up, work hard, 
-          and deliver results. Every project today builds toward a bigger vision for tomorrow.
+      <!-- Center: About Text -->
+      <div class="flex-1 text-center md:text-left card rounded-2xl border border-zinc-700 p-6 shadow-xl">
+        <p class="text-base sm:text-lg leading-relaxed mb-4">
+          Hello, I’m <strong>Andrew Foley</strong> — a Marine veteran who believes in showing up, working hard, 
+          and leaving things better than I found them. The greatest lesson I carried from the Corps was learning how to 
+          solve problems on my own — and that’s exactly what I’m creating <strong>Bridgr</strong> to do for you.
+        </p>
+        <p class="text-base sm:text-lg leading-relaxed mb-4">
+          Right now, I’m personally taking on every project to build trust and prove the standard Bridgr will stand for. 
+          But this is only the beginning. The vision is for Bridgr to grow into a <strong>universal middle-man</strong> — 
+          a reliable way for anyone to get anything done quickly, affordably, and with confidence. Whether you’re a local young person eager to earn extra cash, a licensed and insured professional looking for consistent side work, or someone who simply struggles to find reliable solutions to everyday inconveniences — <strong>Bridgr will be for you</strong>.
+        </p>
+        <p class="text-base sm:text-lg leading-relaxed">
+          When you hire me today, you’re not just getting a job done — you’re helping build that future.
         </p>
       </div>
 
-     <!-- Right: Business Headshot -->
-<div class="flex justify-center md:justify-end">
-  <img src="images/business.jpg" alt="Business Headshot" 
-       class="rounded-full w-40 h-40 object-contain border-4 border-indigo-500 shadow-lg bg-black">
-</div>
+      <!-- Right: Business Headshot -->
+      <div class="flex justify-center md:justify-end w-40 h-40">
+        <img src="images/business.jpg" alt="Business Headshot"
+             class="rounded-full w-40 h-40 object-cover border-4 border-indigo-500 shadow-lg">
+      </div>
 
     </div>
-  </section>
-
-  <!-- =========================
-       HERO: ABOUT ME & BRIDGR
-  ========================= -->
-  <section id="about" class="min-h-[80vh] pt-24 pb-14 sm:pt-28 sm:pb-16 flex items-center justify-center px-5 bg-gradient-to-b from-zinc-950 to-zinc-900 text-white">
-
-  <div class="w-full max-w-3xl text-center">
-
-    <!-- Headline -->
-    <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight sm:leading-[1.1] mb-3">
-      Bridge the gap from <span class="text-indigo-400">to-do</span> to <span class="text-indigo-400">done</span>.
-    </h1>
-
-    <!-- Subtitle -->
-    <h2 class="text-xl sm:text-3xl font-bold mb-5 sm:mb-6">About Me & Bridgr</h2>
-
-    <!-- Story card -->
-    <div class="card border border-zinc-700 rounded-2xl p-5 sm:p-8 shadow-xl text-left">
-      <p class="text-base sm:text-lg leading-relaxed mb-4">
-        Hello, I’m <strong>Andrew Foley</strong> — a Marine veteran who believes in showing up, working hard, 
-        and leaving things better than I found them. The greatest lesson I carried from the Corps was learning how to 
-        solve problems on my own — and that’s exactly what I’m creating <strong>Bridgr</strong> to do for you.
-      </p>
-      <p class="text-base sm:text-lg leading-relaxed mb-4">
-        Right now, I’m personally taking on every project to build trust and prove the standard Bridgr will stand for. 
-        But this is only the beginning. The vision is for Bridgr to grow into a <strong>universal middle-man</strong> — 
-        a reliable way for anyone to get anything done quickly, affordably, and with confidence.  Whether you’re a local young person eager to earn extra cash, a licensed and insured 
-  professional looking for consistent side work, or someone who simply struggles to 
-  find reliable solutions to everyday inconveniences — <strong>Bridgr will be for you</strong>.
-      </p>
-      <p class="text-base sm:text-lg leading-relaxed">
-        When you hire me today, you’re not just getting a job done — you’re helping build that future.
-      </p>
-
+  </div>
 </section>
+
 
   <!-- Header -->
   <header class="fixed inset-x-0 top-0 z-50 border-b border-zinc-800/50 bg-zinc-950/70 backdrop-blur-xl">
@@ -296,6 +272,7 @@ if (form) {
 
 </body>
 </html>
+
 
 
 
