@@ -29,10 +29,41 @@
 <body class="min-h-screen bg-zinc-950 text-white font-[system-ui,Segoe UI,Inter,Arial] antialiased">
 
   <!-- =========================
+       HERO WITH HEADSHOTS
+  ========================= -->
+  <section id="hero" class="bg-zinc-950 py-16 px-6">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 items-center gap-10 text-center md:text-left">
+      
+      <!-- Left: Marine Headshot -->
+      <div class="flex justify-center md:justify-start">
+        <img src="images/marine.jpg" alt="Marine Corps Headshot" 
+             class="rounded-full w-40 h-40 object-cover border-4 border-indigo-500 shadow-lg">
+      </div>
+
+      <!-- Center: Intro Text -->
+      <div>
+        <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight text-white">
+          Bridge the gap from <span class="text-indigo-400">to-do</span> to <span class="text-indigo-400">done</span>.
+        </h1>
+        <p class="mt-4 text-zinc-300 text-lg">
+          From Marine Corps discipline to building Bridgr — I’ve proven I can be trusted to show up, work hard, 
+          and deliver results. Every project today builds toward a bigger vision for tomorrow.
+        </p>
+      </div>
+
+      <!-- Right: Business Headshot -->
+      <div class="flex justify-center md:justify-end">
+        <img src="images/business.jpg" alt="Business Headshot" 
+             class="rounded-full w-40 h-40 object-cover border-4 border-indigo-500 shadow-lg">
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
        HERO: ABOUT ME & BRIDGR
   ========================= -->
+  <section id="about" class="min-h-[80vh] pt-24 pb-14 sm:pt-28 sm:pb-16 flex items-center justify-center px-5 bg-gradient-to-b from-zinc-950 to-zinc-900 text-white">
 
-<section id="about" class="min-h-[80vh] pt-24 pb-14 sm:pt-28 sm:pb-16 flex items-center justify-center px-5 bg-gradient-to-b from-zinc-950 to-zinc-900 text-white">
   <div class="w-full max-w-3xl text-center">
 
     <!-- Headline -->
@@ -264,5 +295,6 @@ if (form) {
 
 </body>
 </html>
+
 
 
