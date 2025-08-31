@@ -9,8 +9,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Meta / SEO -->
-  <meta name="description" content="Local, reliable help: window washing, power washing, gutter cleaning, light yard care, tech support, and handy help." />
-  <meta name="theme-color" content="#0a0a0b" />
+  <meta name="description" content="Local, reliable help: window washing, power washing, gutter cleaning, tech support, handy help — owner-operated with Marine standards." />
+  <meta name="theme-color" content="#F5F2EB" />
   <meta property="og:title" content="Bridgr — Bridge the gap from to-do to done." />
   <meta property="og:description" content="Owner-operated. Friendly. No request is too outrageous." />
   <meta property="og:type" content="website" />
@@ -18,257 +18,259 @@
 
   <style>
     html { scroll-behavior: smooth; }
-    .card { background: linear-gradient(135deg, rgba(39,39,42,.9), rgba(63,63,70,.9)); }
-    .glass { background: rgba(0,0,0,.2); backdrop-filter: blur(8px); }
+
+    /* Brand palette */
+    :root{
+      --cream: #F5F2EB;
+      --navy:  #0D2636;
+      --navy-2:#183B52;
+      --line:  #E5E2DA;
+    }
+
+    /* Global utility tweaks */
+    .card {
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      color: var(--navy);
+    }
     .fade-up { opacity: 0; transform: translateY(12px); transition: .5s ease; }
     .fade-up.in { opacity: 1; transform: translateY(0); }
-    .btn:focus-visible { outline: 2px solid #a78bfa; outline-offset: 2px; }
+    .btn:focus-visible { outline: 2px solid var(--navy-2); outline-offset: 2px; }
     .tap { -webkit-tap-highlight-color: transparent; }
   </style>
 </head>
-<body class="min-h-screen bg-zinc-950 text-white font-[system-ui,Segoe UI,Inter,Arial] antialiased">
 
-<!-- =========================
-     HERO WITH HEADSHOTS + ABOUT
-========================= -->
-<section class="py-16 bg-zinc-950 text-white">
-  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-5 gap-10 items-center">
-    
-    <!-- Left: Marine Headshot -->
-    <div class="flex justify-center">
-      <img src="images/marine.jpg" alt="Marine Corps Headshot"
-           class="rounded-full w-48 h-48 object-cover border-4 border-indigo-500 shadow-lg" />
-    </div>
-
-    <!-- Center: About Me Card (wider, takes 3 columns) -->
-    <div class="md:col-span-3 card rounded-2xl border border-zinc-700 p-8 shadow-xl text-left">
-      <h2 class="text-3xl font-bold text-center mb-6">About Me & Bridgr</h2>
-      <p class="text-base sm:text-lg leading-relaxed mb-4">
-        Hello, I’m <strong>Andrew Foley</strong> — a Marine veteran who believes in showing up, working hard, 
-        and leaving things better than I found them. The greatest lesson I carried from the Corps was learning how to 
-        solve problems on my own — and that’s exactly what I’m creating <strong>Bridgr</strong> to do for you.
-      </p>
-      <p class="text-base sm:text-lg leading-relaxed mb-4">
-        Right now, I’m personally taking on every project to build trust and prove the standard Bridgr will stand for. 
-        But this is only the beginning. The vision is for Bridgr to grow into a <strong>universal middle-man</strong> — 
-        a reliable way for anyone to get anything done quickly, affordably, and with confidence. 
-        Whether you’re a local young person eager to earn extra cash, a licensed and insured professional looking for consistent side work, 
-        or someone who simply struggles to find reliable solutions to everyday inconveniences — <strong>Bridgr will be for you.</strong>
-      </p>
-      <p class="text-base sm:text-lg leading-relaxed">
-        When you hire me today, you’re not just getting a job done — you’re helping build that future.
-      </p>
-    </div>
-
-    <!-- Right: Business Headshot -->
-    <div class="flex justify-center">
-      <img src="images/business.jpg" alt="Business Headshot"
-           class="rounded-full w-48 h-48 object-cover border-4 border-indigo-500 shadow-lg" />
-    </div>
-
-  </div>
-</section>
-
-
+<body class="min-h-screen bg-[#F5F2EB] text-[#0D2636] font-[system-ui,Segoe UI,Inter,Arial] antialiased">
 
   <!-- Header -->
-  <header class="fixed inset-x-0 top-0 z-50 border-b border-zinc-800/50 bg-zinc-950/70 backdrop-blur-xl">
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-[#E5E2DA] bg-[#F5F2EB]/90 backdrop-blur-xl">
     <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
       <a href="#home" class="flex items-center gap-3 tap">
-        <!-- Zakim / B logo -->
-        <svg class="h-8 w-8" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-          <defs>
-            <linearGradient id="g" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#c7d2fe" /><stop offset="1" stop-color="#a78bfa" />
-            </linearGradient>
-          </defs>
-          <rect x="6" y="6" width="52" height="52" rx="14" fill="url(#g)" opacity=".12"/>
-          <path d="M12 48h40" stroke="url(#g)" stroke-width="2"/>
-          <path d="M32 14 L22 48 M32 14 L42 48" stroke="url(#g)" stroke-width="2"/>
-          <path d="M18 48 L28 38 L36 38 L46 48" stroke="url(#g)" stroke-width="2" fill="none"/>
-        </svg>
-        <span class="font-semibold tracking-wide">Bridgr</span>
+        <img src="images/logo.png" alt="Bridgr Logo" class="h-10 w-auto" />
+        <span class="font-semibold tracking-wide text-[#0D2636]">Bridgr</span>
       </a>
-      <nav class="hidden items-center gap-6 text-sm text-zinc-300 sm:flex">
-
-        <a href="#contact" class="tap rounded-xl bg-white px-4 py-2 font-medium text-zinc-900 hover:bg-zinc-200">Get a Quote</a>
+      <nav class="hidden items-center gap-6 text-sm text-[#0D2636] sm:flex">
+        <a href="#services" class="hover:underline">Services</a>
+        <a href="#contact" class="tap rounded-xl bg-[#0D2636] px-4 py-2 font-medium text-[#F5F2EB] hover:bg-[#183B52]">Get a Quote</a>
       </nav>
     </div>
   </header>
 
-  
-  <!-- Services -->
-  <section id="services" class="bg-zinc-950 py-16">
-    <div class="mx-auto max-w-6xl px-4">
-      <h3 class="mb-2 text-center text-3xl font-bold">Services I Can Offer Right Now</h3>
-      <p class="mx-auto mb-10 max-w-2xl text-center text-zinc-400">
-        Honest work with the gear on hand—always done with care and a welcoming approach.
-      </p>
+  <main id="home" class="pt-24">
 
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <!-- Window Washing -->
-        <div class="card rounded-2xl border border-white/10 p-6 fade-up">
-          <div class="mb-4 flex items-center gap-3">
-            <div class="h-5 w-5 rounded bg-indigo-300/30" aria-hidden="true"></div>
-            <h4 class="text-lg font-semibold">Window Washing</h4>
-          </div>
-          <p class="mb-4 text-sm text-zinc-300">
-            Crystal-clear residential & small commercial windows. Exterior + screens. 32′ ladder access for multi-story homes.
+    <!-- ABOUT: Headshots + Card -->
+    <section class="py-16">
+      <div class="mx-auto max-w-7xl px-6 grid grid-cols-1 md:grid-cols-5 gap-10 items-center">
+        <!-- Left headshot -->
+        <div class="flex justify-center">
+          <img src="images/marine.jpg" alt="Marine Corps Headshot"
+               class="rounded-full w-48 h-48 object-cover border-4 border-[#0D2636] shadow-lg" />
+        </div>
+
+        <!-- Center card -->
+        <div class="md:col-span-3 card rounded-2xl p-8 shadow-xl fade-up">
+          <h2 class="text-3xl font-extrabold text-center mb-6">About Me & Bridgr</h2>
+          <p class="text-base sm:text-lg leading-relaxed mb-4">
+            Hello, I’m <strong>Andrew Foley</strong> — a Marine veteran who believes in showing up, working hard,
+            and leaving things better than I found them. The greatest lesson I carried from the Corps was learning how to
+            solve problems on my own — and that’s exactly what I’m creating <strong>Bridgr</strong> to do for you.
           </p>
-          <ul class="list-disc space-y-1 pl-5 text-sm text-zinc-400">
-            <li>Interior/Exterior</li><li>Screens & tracks</li><li>Hard-water spot care</li>
-          </ul>
+          <p class="text-base sm:text-lg leading-relaxed mb-4">
+            Right now, I’m personally taking on every project to build trust and prove the standard Bridgr will stand for.
+            But this is only the beginning. The vision is for Bridgr to grow into a <strong>universal middle-man</strong> —
+            a reliable way for anyone to get anything done quickly, affordably, and with confidence. Whether you’re a local young person eager
+            to earn extra cash, a licensed and insured professional looking for consistent side work, or someone who simply struggles to find
+            reliable solutions to everyday inconveniences — <strong>Bridgr will be for you.</strong>
+          </p>
+          <p class="text-base sm:text-lg leading-relaxed">
+            When you hire me today, you’re not just getting a job done — you’re helping build that future.
+          </p>
         </div>
 
-        <!-- Power Washing -->
-        <div class="card rounded-2xl border border-white/10 p-6 fade-up">
-          <div class="mb-4 flex items-center gap-3">
-            <div class="h-5 w-5 rounded bg-indigo-300/30" aria-hidden="true"></div>
-            <h4 class="text-lg font-semibold">Power Washing</h4>
-          </div>
-          <p class="mb-4 text-sm text-zinc-300">Refresh siding, decks, fences, patios, walkways, and driveways with safe, effective pressure cleaning.</p>
-          <ul class="list-disc space-y-1 pl-5 text-sm text-zinc-400">
-            <li>Vinyl & wood siding</li><li>Decks & patios</li><li>Driveways & walkways</li>
-          </ul>
-        </div>
-
-        <!-- Gutter Cleaning -->
-        <div class="card rounded-2xl border border-white/10 p-6 fade-up">
-          <div class="mb-4 flex items-center gap-3">
-            <div class="h-5 w-5 rounded bg-indigo-300/30" aria-hidden="true"></div>
-            <h4 class="text-lg font-semibold">Gutter Cleaning</h4>
-          </div>
-          <p class="mb-4 text-sm text-zinc-300">Clear clogs, flush downspouts, and protect your home from overflow and ice dams.</p>
-          <ul class="list-disc space-y-1 pl-5 text-sm text-zinc-400">
-            <li>Hand clean & bag</li><li>Downspout flush</li><li>Before/after photos</li>
-          </ul>
-        </div>
-
-<!-- Haul-Assist (Limited) -->
-<div class="card rounded-2xl border border-white/10 p-6 fade-up">
-  <div class="mb-4 flex items-center gap-3">
-    <div class="h-5 w-5 rounded bg-indigo-300/30"></div>
-    <h3 class="text-lg font-semibold">Haul-Assist (Limited)</h3>
-  </div>
-  <p class="mb-4 text-sm text-zinc-300">
-    Occasional access to a pickup/van for small item moves or dump runs. Availability varies—ask when booking.
-  </p>
-  <ul class="list-disc space-y-1 pl-5 text-sm text-zinc-400">
-    <li>Small moves</li>
-    <li>Dump runs (bagged)</li>
-    <li>Curb-to-curb assist</li>
-  </ul>
-</div>
-
-        <!-- Handy Help + Tech Support -->
-        <div class="card rounded-2xl border border-white/10 p-6 fade-up">
-          <div class="mb-4 flex items-center gap-3">
-            <div class="h-5 w-5 rounded bg-indigo-300/30" aria-hidden="true"></div>
-            <h4 class="text-lg font-semibold">Handy Help & Tech Support</h4>
-          </div>
-          <p class="mb-4 text-sm text-zinc-300">Quick fixes around the house, plus help with computers, devices, and Wi-Fi so your tech runs smoothly.</p>
-          <ul class="list-disc space-y-1 pl-5 text-sm text-zinc-400">
-            <li>Install/replace basics</li><li>Assemble & mount</li><li>PC/Wi-Fi/software help</li>
-          </ul>
+        <!-- Right headshot -->
+        <div class="flex justify-center">
+          <img src="images/business.jpg" alt="Business Headshot"
+               class="rounded-full w-48 h-48 object-cover border-4 border-[#0D2636] shadow-lg" />
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-   <!-- Contact -->
-  <section id="contact" class="bg-zinc-950 py-16">
-    <div class="mx-auto max-w-6xl px-4 grid gap-10 md:grid-cols-2">
-      <div class="fade-up">
-        <h3 class="mb-2 text-3xl font-bold">Get a Quote</h3>
-        <p class="mb-6 max-w-md text-zinc-400">
-          Tell me what you need, where you are, and your ideal timing.
-          <strong> No request is too outrageous</strong>—share your idea and we’ll figure it out together.
+    <!-- SERVICES -->
+    <section id="services" class="py-16">
+      <div class="mx-auto max-w-6xl px-6">
+        <h3 class="mb-3 text-center text-3xl font-extrabold">Services I Can Offer Right Now</h3>
+        <p class="mx-auto mb-10 max-w-2xl text-center text-[#183B52]">
+          Honest work with the gear on hand — always done with care and a welcoming approach.
         </p>
-        <div class="mt-6 space-y-3 text-zinc-300">
-          <div class="flex items-center gap-3">
-            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16v12H4z" stroke="currentColor"/><path d="M4 7l8 6 8-6" stroke="currentColor"/></svg>
-            <a class="hover:underline" href="mailto:andrewfoley@thebridgr.com">andrewfoley@thebridgr.com</a>
+
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- Window Washing -->
+          <div class="card rounded-2xl p-6 shadow-sm fade-up">
+            <div class="mb-4 flex items-center gap-3">
+              <div class="h-5 w-5 rounded bg-[#183B52]" aria-hidden="true"></div>
+              <h4 class="text-lg font-semibold">Window Washing</h4>
+            </div>
+            <p class="mb-4 text-sm">
+              Crystal-clear residential & small commercial windows. Exterior + screens. 32′ ladder access for multi-story homes.
+            </p>
+            <ul class="list-disc space-y-1 pl-5 text-sm">
+              <li>Interior/Exterior</li>
+              <li>Screens & tracks</li>
+              <li>Hard-water spot care</li>
+            </ul>
+          </div>
+
+          <!-- Power Washing -->
+          <div class="card rounded-2xl p-6 shadow-sm fade-up">
+            <div class="mb-4 flex items-center gap-3">
+              <div class="h-5 w-5 rounded bg-[#183B52]" aria-hidden="true"></div>
+              <h4 class="text-lg font-semibold">Power Washing</h4>
+            </div>
+            <p class="mb-4 text-sm">
+              Refresh siding, decks, fences, patios, walkways, and driveways with safe, effective pressure cleaning.
+            </p>
+            <ul class="list-disc space-y-1 pl-5 text-sm">
+              <li>Vinyl & wood siding</li>
+              <li>Decks & patios</li>
+              <li>Driveways & walkways</li>
+            </ul>
+          </div>
+
+          <!-- Gutter Cleaning -->
+          <div class="card rounded-2xl p-6 shadow-sm fade-up">
+            <div class="mb-4 flex items-center gap-3">
+              <div class="h-5 w-5 rounded bg-[#183B52]" aria-hidden="true"></div>
+              <h4 class="text-lg font-semibold">Gutter Cleaning</h4>
+            </div>
+            <p class="mb-4 text-sm">
+              Clear clogs, flush downspouts, and protect your home from overflow and ice dams.
+            </p>
+            <ul class="list-disc space-y-1 pl-5 text-sm">
+              <li>Hand clean & bag</li>
+              <li>Downspout flush</li>
+              <li>Before/after photos</li>
+            </ul>
+          </div>
+
+          <!-- Haul-Assist (Limited) -->
+          <div class="card rounded-2xl p-6 shadow-sm fade-up">
+            <div class="mb-4 flex items-center gap-3">
+              <div class="h-5 w-5 rounded bg-[#183B52]" aria-hidden="true"></div>
+              <h4 class="text-lg font-semibold">Haul-Assist (Limited)</h4>
+            </div>
+            <p class="mb-4 text-sm">
+              Occasional access to a pickup/van for small item moves or dump runs. Availability varies — ask when booking.
+            </p>
+            <ul class="list-disc space-y-1 pl-5 text-sm">
+              <li>Small moves</li>
+              <li>Dump runs (bagged)</li>
+              <li>Curb-to-curb assist</li>
+            </ul>
+          </div>
+
+          <!-- Handy Help & Tech Support -->
+          <div class="card rounded-2xl p-6 shadow-sm fade-up">
+            <div class="mb-4 flex items-center gap-3">
+              <div class="h-5 w-5 rounded bg-[#183B52]" aria-hidden="true"></div>
+              <h4 class="text-lg font-semibold">Handy Help & Tech Support</h4>
+            </div>
+            <p class="mb-4 text-sm">
+              Quick fixes around the house, plus help with computers, devices, and Wi-Fi so your tech runs smoothly.
+            </p>
+            <ul class="list-disc space-y-1 pl-5 text-sm">
+              <li>Install/replace basics</li>
+              <li>Assemble & mount</li>
+              <li>PC/Wi-Fi/software help</li>
+            </ul>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- INSTANT SEND FORM (Formspree) -->
-<form id="quoteForm" class="card rounded-2xl border border-white/10 p-6 fade-up">
-  <label class="mb-2 block text-sm text-zinc-300" for="name">Name</label>
-  <input id="name" class="mb-4 w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-white outline-none placeholder:text-zinc-500" placeholder="Your name" required />
+    <!-- CONTACT -->
+    <section id="contact" class="py-16">
+      <div class="mx-auto max-w-6xl px-6 grid gap-10 md:grid-cols-2">
+        <div class="fade-up">
+          <h3 class="mb-3 text-3xl font-extrabold">Get a Quote</h3>
+          <p class="mb-6 max-w-md text-[#183B52]">
+            Tell me what you need, where you are, and your ideal timing.
+            <strong> No request is too outrageous</strong> — share your idea and we’ll figure it out together.
+          </p>
+          <div class="mt-6 space-y-3">
+            <div class="flex items-center gap-3">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 6h16v12H4z" stroke="currentColor"/>
+                <path d="M4 7l8 6 8-6" stroke="currentColor"/>
+              </svg>
+              <a class="hover:underline" href="mailto:andrewfoley@thebridgr.com">andrewfoley@thebridgr.com</a>
+            </div>
+          </div>
+        </div>
 
-  <label class="mb-2 block text-sm text-zinc-300" for="email">Email</label>
-  <input id="email" type="email" class="mb-4 w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-white outline-none placeholder:text-zinc-500" placeholder="you@example.com" required />
+        <!-- Mailto form -->
+        <form id="quoteForm" class="card rounded-2xl p-6 fade-up">
+          <label class="mb-2 block text-sm" for="name">Name</label>
+          <input id="name" class="mb-4 w-full rounded-xl border border-[#E5E2DA] bg-white px-4 py-3 outline-none placeholder:text-[#8c8a85]" placeholder="Your name" required />
 
-  <label class="mb-2 block text-sm text-zinc-300" for="phone">Phone (optional)</label>
-  <input id="phone" type="tel" class="mb-4 w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-white outline-none placeholder:text-zinc-500" placeholder="(123) 456-7890" />
+          <label class="mb-2 block text-sm" for="email">Email</label>
+          <input id="email" type="email" class="mb-4 w-full rounded-xl border border-[#E5E2DA] bg-white px-4 py-3 outline-none placeholder:text-[#8c8a85]" placeholder="you@example.com" required />
 
-  <label class="mb-2 block text-sm text-zinc-300" for="msg">What do you need?</label>
-  <textarea id="msg" class="mb-6 h-32 w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-white outline-none placeholder:text-zinc-500"
-    placeholder="e.g., 20 windows exterior + screens; 2-story; Milton, MA; aiming for next week. No request is too outrageous!" required></textarea>
+          <label class="mb-2 block text-sm" for="phone">Phone (optional)</label>
+          <input id="phone" type="tel" class="mb-4 w-full rounded-xl border border-[#E5E2DA] bg-white px-4 py-3 outline-none placeholder:text-[#8c8a85]" placeholder="(123) 456-7890" />
 
-  <button type="submit" class="w-full rounded-xl bg-white px-5 py-3 font-semibold text-zinc-900 hover:bg-zinc-200">Send</button>
-</form>
+          <label class="mb-2 block text-sm" for="msg">What do you need?</label>
+          <textarea id="msg" class="mb-6 h-32 w-full rounded-xl border border-[#E5E2DA] bg-white px-4 py-3 outline-none placeholder:text-[#8c8a85]"
+            placeholder="e.g., 20 windows exterior + screens; 2-story; Milton, MA; aiming for next week. No request is too outrageous!" required></textarea>
 
-    </div>
-  </section>
+          <button type="submit" class="w-full rounded-xl bg-[#0D2636] px-5 py-3 font-semibold text-[#F5F2EB] hover:bg-[#183B52]">Send</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
 
   <!-- Footer -->
-  <footer class="border-t border-white/10 bg-zinc-950 py-10">
-    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 text-sm text-zinc-400 md:flex-row">
-      <div class="flex items-center gap-3 text-zinc-300">
-        <svg class="h-6 w-6" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-          <defs><linearGradient id="g2" x1="0" y1="0" x2="64" y2="64"><stop stop-color="#c7d2fe"/><stop offset="1" stop-color="#a78bfa"/></linearGradient></defs>
-          <rect x="6" y="6" width="52" height="52" rx="14" fill="url(#g2)" opacity=".12"/>
-          <path d="M12 48h40" stroke="url(#g2)" stroke-width="2"/>
-          <path d="M32 14 L22 48 M32 14 L42 48" stroke="url(#g2)" stroke-width="2"/>
-          <path d="M18 48 L28 38 L36 38 L46 48" stroke="url(#g2)" stroke-width="2" fill="none"/>
-        </svg>
+  <footer class="border-t border-[#E5E2DA] bg-[#F5F2EB] py-10">
+    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 text-sm text-[#183B52] md:flex-row">
+      <div class="flex items-center gap-3">
+        <img src="images/logo.png" alt="Bridgr" class="h-6 w-auto" />
         <span>© <span id="yr"></span> Bridgr. All rights reserved.</span>
       </div>
-      <div class="flex items-center gap-6">
-       
-      </div>
+      <div class="flex items-center gap-6"></div>
     </div>
   </footer>
 
   <script>
-  // --- Footer year ---
-  document.getElementById('yr').textContent = new Date().getFullYear();
+    // Year
+    document.getElementById('yr').textContent = new Date().getFullYear();
 
-  // --- Simple fade-up on scroll ---
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((e) => {
-      if (e.isIntersecting) {
-        e.target.classList.add('in');
-        io.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.15 });
-  document.querySelectorAll('.fade-up').forEach((el) => io.observe(el));
+    // Fade-up on scroll
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.fade-up').forEach(el=>io.observe(el));
 
-// --- Quote form -> mailto (no backend) ---
-const form = document.getElementById('quoteForm');
-if (form) {
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
+    // Mailto form (no backend)
+    const form = document.getElementById('quoteForm');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name  = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = (document.getElementById('phone')?.value || '').trim();
+        const msg   = document.getElementById('msg').value.trim();
 
-    const name  = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const phone = (document.getElementById('phone')?.value || '').trim();
-    const msg   = document.getElementById('msg').value.trim();
+        const to = 'andrewfoley@thebridgr.com';
+        const subject = encodeURIComponent('Bridgr — Quote Request');
+        const body = encodeURIComponent(
+          `Name: ${name}\nEmail: ${email}\nPhone: ${phone || '-'}\n\n${msg}`
+        );
 
-    const to = 'andrewfoley@thebridgr.com';
-    const subject = encodeURIComponent('Bridgr — Quote Request');
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nPhone: ${phone || '-'}\n\n${msg}`
-    );
-
-    window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
-  });
-}
-
-</script>
-
+        window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+      });
+    }
+  </script>
 </body>
 </html>
